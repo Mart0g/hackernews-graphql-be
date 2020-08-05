@@ -1,10 +1,8 @@
-function link(parent, args, context) {
-  return context.prisma.vote.findOne({ where: { id: parent.id } }).link();
-}
+const link = (parent, args, context) =>
+  context.prisma.vote.findOne({ where: { id: parent.id } }).link();
 
-function user(parent, args, context) {
-  return context.prisma.vote.findOne({ where: { id: parent.id } }).user();
-}
+const user = (parent, args, context) =>
+  context.prisma.vote.findOne({ where: { id: parent.id } }).user();
 
 module.exports = {
   link,
